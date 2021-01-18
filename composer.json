@@ -1,0 +1,35 @@
+{
+    "name": "mpassocies/common",
+    "type": "library",
+    "description": "Common objects for MS of mpassocies",
+    "license": "MIT",
+	"authors": [
+        {
+            "name": "Mayeul-T",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "calebporzio/parental": "^0.11.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.12",
+        "myclabs/php-enum": "^1.7"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MpAssocies\\": "src/"
+        }
+    }
+}
