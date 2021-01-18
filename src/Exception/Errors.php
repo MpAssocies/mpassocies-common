@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MpAssocies\Models;
+namespace MpAssocies\Exception;
 
 
 use MyCLabs\Enum\Enum;
@@ -17,6 +17,7 @@ class Errors extends Enum
     const UNKNOWN_ERROR = 'UNKNOW_ERROR';
     const MODEL_NOT_FOUND = 'MODEL_NOT_FOUND';
     const ERROR_FORM_VALIDATION = 'ERROR_FORM_VALIDATION';
+    const LARAVEL_HTTP_EXCEPTION = 'LARAVEL_HTTP_EXCEPTION';
 
     //Generic form errors
     const MISSING_FIELD = 'MISSING_FIELD';
