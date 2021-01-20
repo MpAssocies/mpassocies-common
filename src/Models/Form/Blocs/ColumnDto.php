@@ -5,6 +5,7 @@ namespace MpAssocies\Models\Form\Blocs;
 
 
 use DateTimeImmutable;
+use Exception;
 
 class ColumnDto
 {
@@ -48,5 +49,22 @@ class ColumnDto
             'createdAt' => $this->createdAt,
             'updatedAt' => $this->updatedAt,
         ];
+    }
+
+    /**
+     * @param array $array
+     * @return ColumnDto
+     * @throws Exception
+     */
+    public static function deserialize(array $array)
+    {
+        $column = new ColumnDto();
+        $column->id = $array['id'];
+        $column->name = $array['name'];
+        $column->arrayId = $array['arrayId'];
+        $column->position = $array['position'];
+        $column->createdAt = new DateTimeImmutable($array['createdAt']);
+        $column->updatedAt = new DateTimeImmutable($array['updatedAt']);
+        return $column;
     }
 }

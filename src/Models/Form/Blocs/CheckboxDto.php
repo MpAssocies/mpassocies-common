@@ -4,6 +4,8 @@
 namespace MpAssocies\Models\Form\Blocs;
 
 
+use Exception;
+
 class CheckboxDto extends BlocDto
 {
     /**
@@ -45,5 +47,27 @@ class CheckboxDto extends BlocDto
             'required' => $this->required,
             'items' => $itemArray,
         ]);
+    }
+
+    /**
+     * @param array $array
+     * @return CheckboxDto
+     * @throws Exception
+     */
+    public static function deserializeBloc(array $array)
+    {
+        $items = [];
+        foreach ($array['items'] as $arrayItem){
+            $items[] = CheckboxItemDto::deserialize($arrayItem);
+        }
+
+        $checkbox = new CheckboxDto();
+        $checkbox->fillGenericData($array);
+        $checkbox->label = $array['label'];
+        $checkbox->name = $array['name'];
+        $checkbox->unique = $array['unique'];
+        $checkbox->required = $array['required'];
+        $checkbox->items = $items;
+        return $checkbox;
     }
 }

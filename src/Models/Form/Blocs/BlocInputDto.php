@@ -37,4 +37,19 @@ class BlocInputDto extends BlocDto
             'required' => $this->required,
         ]);
     }
+
+    /**
+     * @param array $array
+     * @return BlocInputDto
+     */
+    public static function deserializeBloc(array $array)
+    {
+        $input = new BlocInputDto();
+        $input->fillGenericData($array);
+        $input->label = $array['label'];
+        $input->name = $array['name'];
+        $input->inputType = $array['inputType'];
+        $input->required = $array['required'];
+        return $input;
+    }
 }

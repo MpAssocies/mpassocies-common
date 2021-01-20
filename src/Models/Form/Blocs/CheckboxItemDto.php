@@ -5,6 +5,7 @@ namespace MpAssocies\Models\Form\Blocs;
 
 
 use DateTimeImmutable;
+use Exception;
 
 class CheckboxItemDto
 {
@@ -51,5 +52,22 @@ class CheckboxItemDto
             'createdAt' => $this->createdAt,
             'updatedAt' => $this->updatedAt,
         ];
+    }
+
+    /**
+     * @param $array
+     * @return CheckboxItemDto
+     * @throws Exception
+     */
+    public static function deserialize($array)
+    {
+        $item = new CheckboxItemDto();
+        $item->id = $array['id'];
+        $item->label = $array['label'];
+        $item->checkboxId = $array['checkboxId'];
+        $item->position = $array['position'];
+        $item->createdAt = new DateTimeImmutable($array['createdAt']);
+        $item->updatedAt = new DateTimeImmutable($array['updatedAt']);
+        return $item;
     }
 }

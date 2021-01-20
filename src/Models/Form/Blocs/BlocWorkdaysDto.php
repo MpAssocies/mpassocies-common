@@ -17,4 +17,16 @@ class BlocWorkdaysDto extends BlocDto
             'year' => $this->year,
         ]);
     }
+
+    /**
+     * @param array $array
+     * @return BlocWorkdaysDto
+     */
+    public static function deserializeBloc(array $array)
+    {
+        $blocWorkdays = new BlocWorkdaysDto();
+        $blocWorkdays->fillGenericData($array);
+        $blocWorkdays->year = $array['year'];
+        return $blocWorkdays;
+    }
 }

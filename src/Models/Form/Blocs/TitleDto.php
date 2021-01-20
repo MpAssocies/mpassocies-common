@@ -25,4 +25,18 @@ class TitleDto extends BlocDto
             'content' => $this->content,
         ]);
     }
+
+
+    /**
+     * @param array $array
+     * @return TitleDto
+     */
+    public static function deserializeBloc(array $array)
+    {
+        $title = new TitleDto();
+        $title->fillGenericData($array);
+        $title->level = $array['level'];
+        $title->content = $array['content'];
+        return $title;
+    }
 }
