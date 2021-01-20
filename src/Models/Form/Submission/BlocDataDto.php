@@ -5,6 +5,7 @@ namespace MpAssocies\Models\Form\Submission;
 
 
 use DateTimeImmutable;
+use Exception;
 
 class BlocDataDto
 {
@@ -48,15 +49,15 @@ class BlocDataDto
             'blocId' => $this->blocId,
             'submissionId' => $this->submissionId,
             'content' => $this->content,
-            'createdAt' => $this->createdAt,
-            'updatedAt' => $this->updatedAt,
+            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
+            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
         ];
     }
 
     /**
      * @param array $array
      * @return BlocDataDto
-     * @throws \Exception
+     * @throws Exception
      */
     public static function deserialize( array $array)
     {
