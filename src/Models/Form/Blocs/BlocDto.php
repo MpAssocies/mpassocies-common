@@ -8,7 +8,7 @@ use Exception;
 use MpAssocies\Exception\DtoDeserializationException;
 use MpAssocies\Models\Form\BlocType;
 
-abstract class BlocDto
+class BlocDto
 {
     /**
      * @var integer
