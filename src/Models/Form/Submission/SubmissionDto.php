@@ -53,8 +53,8 @@ class SubmissionDto
             'id' => $this->id,
             'userId' => $this->userId,
             'formId' => $this->formId,
-            'createdAt' => $this->createdAt,
-            'updatedAt' => $this->updatedAt,
+            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
+            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
             'blocData' => $arrayBlocData,
         ];
     }
