@@ -78,6 +78,9 @@ abstract class BlocDto
         throw new DtoDeserializationException("Unknown bloc type " . $type . ". Please check switch in bloc deserializer");
     }
 
+    /**
+     * @param $array
+     */
     public function fillGenericData($array){
         $this->id = $array['id'];
         $this->type = $array['type'];
