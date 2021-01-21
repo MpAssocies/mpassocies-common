@@ -4,6 +4,7 @@
 namespace MpAssocies\Models\Form\Blocs;
 
 
+use DateTimeImmutable;
 use Exception;
 use MpAssocies\Exception\DtoDeserializationException;
 use MpAssocies\Models\Form\BlocType;
@@ -35,6 +36,19 @@ class BlocDto
      */
     public $position;
 
+    /**
+     * @var DateTimeImmutable
+     */
+    public $createdAt;
+
+    /**
+     * @var DateTimeImmutable
+     */
+    public $updatedAt;
+
+    /**
+     * @return array
+     */
     public function serialize()
     {
         return [
@@ -42,7 +56,9 @@ class BlocDto
             'type' => $this->type,
             'position' => $this->position,
             'metadata' => $this->metadata,
-            'sheetId' => $this->sheetId
+            'sheetId' => $this->sheetId,
+            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
+            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s')
         ];
     }
 
@@ -80,6 +96,7 @@ class BlocDto
 
     /**
      * @param $array
+     * @throws Exception
      */
     public function fillGenericData($array){
         $this->id = $array['id'];
@@ -87,5 +104,7 @@ class BlocDto
         $this->position = $array['position'];
         $this->metadata = $array['metadata'];
         $this->sheetId = $array['sheetId'];
+        $this->createdAt = new DateTimeImmutable($array['createdAt']);
+        $this->updatedAt = new DateTimeImmutable($array['updatedAt']);
     }
 }

@@ -46,8 +46,8 @@ class ColumnDto
             'name' => $this->name,
             'arrayId' => $this->arrayId,
             'position' => $this->position,
-            'createdAt' => $this->createdAt,
-            'updatedAt' => $this->updatedAt,
+            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
+            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
         ];
     }
 
