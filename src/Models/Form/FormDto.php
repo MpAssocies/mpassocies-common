@@ -7,6 +7,7 @@ namespace MpAssocies\Models\Form;
 use DateTimeImmutable;
 use Exception;
 use MpAssocies\Exception\DtoDeserializationException;
+use MpAssocies\Models\StringUtils;
 
 class FormDto
 {
@@ -48,8 +49,8 @@ class FormDto
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
+            'createdAt' => $this->createdAt->format(StringUtils::DATE_FORMAT),
+            'updatedAt' => $this->updatedAt->format(StringUtils::DATE_FORMAT),
             'sheets' => $sheetArray,
         ];
     }

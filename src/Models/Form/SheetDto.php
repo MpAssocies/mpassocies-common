@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use Exception;
 use MpAssocies\Exception\DtoDeserializationException;
 use MpAssocies\Models\Form\Blocs\BlocDto;
+use MpAssocies\Models\StringUtils;
 
 class SheetDto
 {
@@ -68,8 +69,8 @@ class SheetDto
             'clonable' => $this->clonable,
             'position' => $this->position,
             'blocs' => $arrayBlocs,
-            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
+            'createdAt' => $this->createdAt->format(StringUtils::DATE_FORMAT),
+            'updatedAt' => $this->updatedAt->format(StringUtils::DATE_FORMAT),
         ];
     }
 

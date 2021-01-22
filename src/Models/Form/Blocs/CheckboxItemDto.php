@@ -6,6 +6,7 @@ namespace MpAssocies\Models\Form\Blocs;
 
 use DateTimeImmutable;
 use Exception;
+use MpAssocies\Models\StringUtils;
 
 class CheckboxItemDto
 {
@@ -49,8 +50,8 @@ class CheckboxItemDto
             'label' => $this->label,
             'checkboxId' => $this->checkboxId,
             'position' => $this->position,
-            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
+            'createdAt' => $this->createdAt->format(StringUtils::DATE_FORMAT),
+            'updatedAt' => $this->updatedAt->format(StringUtils::DATE_FORMAT),
         ];
     }
 

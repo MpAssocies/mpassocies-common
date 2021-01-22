@@ -6,6 +6,7 @@ namespace MpAssocies\Models\Form\Submission;
 
 use DateTimeImmutable;
 use Exception;
+use MpAssocies\Models\StringUtils;
 
 class SubmissionDto
 {
@@ -53,8 +54,8 @@ class SubmissionDto
             'id' => $this->id,
             'userId' => $this->userId,
             'formId' => $this->formId,
-            'createdAt' => $this->createdAt->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt->format('Y-m-d H:i:s'),
+            'createdAt' => $this->createdAt->format(StringUtils::DATE_FORMAT),
+            'updatedAt' => $this->updatedAt->format(StringUtils::DATE_FORMAT),
             'blocData' => $arrayBlocData,
         ];
     }
