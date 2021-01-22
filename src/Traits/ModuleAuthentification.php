@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use MpAssocies\Exception\Auth\LoginException;
 use MpAssocies\Models\Auth\Module\AuthKey;
 use MpAssocies\Models\Auth\Module\Session;
+use MpAssocies\Models\StringUtils;
 
 trait ModuleAuthentification
 {
@@ -48,7 +49,7 @@ trait ModuleAuthentification
         return response()->json(
             [
                 'token' => $session->value,
-                'expiration_date' => $session->expiration->format("Y-m-d H:i:s")
+                'expiration_date' => $session->expiration->format(StringUtils::DATE_FORMAT)
             ]
         );
     }
