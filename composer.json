@@ -1,7 +1,7 @@
 {
     "name": "mpassocies/common",
     "type": "library",
-    "version": "0.0.2",
+    "version": "3.0.1",
     "description": "Common objects for MS of mpassocies",
     "license": "MIT",
 	"authors": [
