@@ -2,7 +2,6 @@
 namespace MpAssocies\Models\Calendar;
 
 use Exception;
-use Parental\HasParent;
 
 class MeetingDto extends EventDto
 {

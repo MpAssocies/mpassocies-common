@@ -21,7 +21,7 @@ class DtoDeserializationException extends AppException
     public function json()
     {
         return [
-            'code' => Errors::ERROR_FORM_VALIDATION,
+            'code' => Errors::ERROR_DESERIALIZE_OBJECT,
             'message' => $this->getMessage(),
         ];
     }
